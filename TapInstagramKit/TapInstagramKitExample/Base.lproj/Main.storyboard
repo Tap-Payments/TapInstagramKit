@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nlz-ul-Shd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="baO-Ir-Px1">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="nlz-ul-Shd" customClass="ViewController" customModule="TapInstagramKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iRA-Fa-FbS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in the instagram handler" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HQm-db-pOL">
+                                <rect key="frame" x="20" y="44" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ca2-n5-QPc">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ca2-n5-QPc" secondAttribute="height" multiplier="1:1" id="QHT-gz-MBn"/>
+                                    <constraint firstAttribute="width" constant="240" id="RAL-JV-xZK"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="EVd-cM-Vmm">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="systemOrangeColor"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From OSAMA with love" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBp-0b-fCa">
+                                <rect key="frame" x="20" y="833" width="374" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1h-nt-UVN" customClass="TapWebInstagramWebView" customModule="TapInstagramKit">
+                                <rect key="frame" x="206.5" y="576" width="1" height="1"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="3Vq-dc-VAQ"/>
+                                    <constraint firstAttribute="height" constant="1" id="meM-Sz-pE9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8gt-r9-iaO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EVd-cM-Vmm" firstAttribute="centerY" secondItem="iRA-Fa-FbS" secondAttribute="centerY" id="J3V-fa-7VG"/>
+                            <constraint firstItem="8gt-r9-iaO" firstAttribute="trailing" secondItem="dBp-0b-fCa" secondAttribute="trailing" constant="20" id="KkT-UC-Og5"/>
+                            <constraint firstItem="dBp-0b-fCa" firstAttribute="leading" secondItem="8gt-r9-iaO" secondAttribute="leading" constant="20" id="T8G-56-nHU"/>
+                            <constraint firstItem="HQm-db-pOL" firstAttribute="leading" secondItem="8gt-r9-iaO" secondAttribute="leading" constant="20" id="XcC-tX-aGr"/>
+                            <constraint firstItem="b1h-nt-UVN" firstAttribute="centerX" secondItem="iRA-Fa-FbS" secondAttribute="centerX" id="Xso-eu-4Fz"/>
+                            <constraint firstItem="8gt-r9-iaO" firstAttribute="bottom" secondItem="dBp-0b-fCa" secondAttribute="bottom" constant="9" id="eX3-UC-hZ2"/>
+                            <constraint firstItem="ca2-n5-QPc" firstAttribute="centerY" secondItem="iRA-Fa-FbS" secondAttribute="centerY" id="hkL-sC-LpL"/>
+                            <constraint firstItem="ca2-n5-QPc" firstAttribute="centerX" secondItem="iRA-Fa-FbS" secondAttribute="centerX" id="joU-Qk-mMa"/>
+                            <constraint firstItem="8gt-r9-iaO" firstAttribute="trailing" secondItem="HQm-db-pOL" secondAttribute="trailing" constant="20" id="kxj-8l-0nZ"/>
+                            <constraint firstItem="EVd-cM-Vmm" firstAttribute="centerX" secondItem="iRA-Fa-FbS" secondAttribute="centerX" id="nxG-NZ-2IA"/>
+                            <constraint firstItem="HQm-db-pOL" firstAttribute="top" secondItem="8gt-r9-iaO" secondAttribute="top" id="psy-kd-aJv"/>
+                            <constraint firstItem="b1h-nt-UVN" firstAttribute="top" secondItem="ca2-n5-QPc" secondAttribute="bottom" constant="8" symbolic="YES" id="xfZ-gA-BWw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="ca2-n5-QPc" id="W4d-q8-VUN"/>
+                        <outlet property="instagrabWebController" destination="b1h-nt-UVN" id="Xlj-a1-33N"/>
+                        <outlet property="loading" destination="EVd-cM-Vmm" id="9A3-wH-YCm"/>
+                        <outlet property="userTextField" destination="HQm-db-pOL" id="B87-Hg-OX6"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cie-4S-oNf" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-659" y="114"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
